@@ -1,0 +1,6 @@
+#summary One-sentence UserGuide for FlashWatir.
+
+==Introduction==
+
+[http://code.google.com/p/flash-watir/ FlashWatir] is an extension of watir for testing flash applications in firefox. *[http://code.google.com/p/flash-watir/ FlashWatir] has been built on firewatir and so can work only on firefox as of now.* The work on IE is going on and may be available after sometime.
+
