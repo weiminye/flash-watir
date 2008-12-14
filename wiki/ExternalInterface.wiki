@@ -5,7 +5,7 @@
 
 Flash ExternalInterface provides a mechanism for which you can use JavaScript to call an ActionScript function in the Flash Player. In [http://code.google.com/p/flash-watir/ FlashWatir] we use JavaScript as the conduit between Watir and the Flash application.
 
-With Flash ExternalInterface you can expose specific Flash object functions.For example, the following code adds external invocation capabilities to some of the ColoredSquare Flash component methods.
+With Flash ExternalInterface you can expose specific Flash object functions.For example, the following code adds external invocation capabilities to some of the `ColoredSquare` Flash component methods.
 
 {{{
 // functions available for JavaSript call
