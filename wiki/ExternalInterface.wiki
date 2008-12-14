@@ -15,6 +15,6 @@ ExternalInterface.addCallback("getSquareLabel", getSquareLabel);
 ExternalInterface.addCallback("setSquareLabel", setSquareLabel);
 }}}
 
-On the testing side, The FlashWatir is the component adding Flash communication capabilities to the Watir. The flash object is identified using id given in the OBJECT tag of the flash component on the html side.
+On the testing side, The [http://code.google.com/p/flash-watir/ FlashWatir] is the component adding Flash communication capabilities to the Watir. The flash object is identified using id given in the OBJECT tag of the flash component on the html side.
 
 You can invoke functions which were externalized by the ExternalInterface, as well as the default functions of any flash object (e.g, PercentLoaded(), IsPlaying(), etc).
