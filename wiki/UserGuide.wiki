@@ -22,3 +22,17 @@
 
     From your command line:
     > gem install flash_watir
+
+==Testability of Flash==
+
+FlashWatir works with flash using javascript. Any function you need to call in flash either to change something or to get some values needs to get exposed as ExternalInterface. 
+
+{{{
+// functions available for JavaSript call
+ExternalInterface.addCallback("getColor", getColor);
+ExternalInterface.addCallback("click", changeColor);
+ExternalInterface.addCallback("getSquareLabel", getSquareLabel);
+ExternalInterface.addCallback("setSquareLabel", setSquareLabel);
+}}}
+
+The default methods like play(), percantage loaded, etc. can be called directly on flash. For more info about these methods please refer the flash.rb file in the source. 
