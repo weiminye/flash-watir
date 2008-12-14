@@ -1,6 +1,24 @@
-#summary One-sentence UserGuide for FlashWatir.
+#summary UserGuide for FlashWatir.
+#labels Featured,Phase-Deploy,Phase-Implementation
 
 ==Introduction==
 
 [http://code.google.com/p/flash-watir/ FlashWatir] is an extension of watir for testing flash applications in firefox. *[http://code.google.com/p/flash-watir/ FlashWatir] has been built on firewatir and so can work only on firefox as of now.* The work on IE is going on and may be available after sometime.
 
+==Installation==
+
+  * To Install ruby: [http://www.ruby-lang.org]
+
+    The instructions to install ruby must be available in the website. Once you install check the installation by typing > ruby -v in the command line which should give the version number of ruby.
+
+  * To install firewatir: [http://wtr.rubyforge.org/]
+
+    From command line:
+    > gem install firewatir.
+
+  * To Install flashwatir:
+
+    Best way to install is to use the gem. You can download the gem from download section of this project
+
+    From your command line:
+    > gem install flash_watir
