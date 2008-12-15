@@ -23,6 +23,8 @@
     From your command line:
     > gem install flash_watir
 
+*When writing script using `FlashWatir`, use require statement to import `FlashWatir` but when including the module you still need to use `FireWatir`.*
+
 ==Testability of Flash==
 
 FlashWatir works with flash using javascript. Any function you need to call in flash either to change something or to get some values needs to get exposed as ExternalInterface. 
