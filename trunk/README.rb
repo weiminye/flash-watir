@@ -33,7 +33,7 @@ Typical Usage
    require 'flash_watir'
    include FireWatir
    # create an instance of the controller
-   browser = Browser.new
+   browser = Firefox.new
    # go to the flash page you want to test
    browser.goto('http://myflashapp/')
    # call the default methods available in flash

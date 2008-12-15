@@ -37,6 +37,16 @@ class FlashWatirTests < Test::Unit::TestCase
     assert_equal("100",@browser.flash(:id, "clickcolors").percent_loaded)
     assert_equal(false, @browser.flash(:id, "clickcolors").is_playing?)
   end
+  def test_should_throw_exceptions
+    @browser.goto "http://localhost/wtrFlash/colors.html"
+    assert_raise(UnknownObjectException){@browser.flash(:id,"nonexistant").percent_loaded}
+    assert_raise(NoMethodError){@browser.flash(:id,"clickcolors").no_method_available}
+  end
+  def test_should_check_if_flash_element_exist
+    @browser.goto "http://localhost/wtrFlash/colors.html"
+    assert_equal(true,@browser.flash(:id,"clickcolors").exist?)
+    assert_equal(false,@browser.flash(:id,"noflash").exist?)
+  end
   def teardown
     @browser.close
   end  
