@@ -13,6 +13,6 @@ The sample flash application used for testing is available in the Downloads sect
 The installation instructions for `FlashWatir` is available in the UserGuide section of wiki. Once you install the go to the test folder and *change the url of the application in the individual methods of the test to the url of the application you have hosted*. 
 Now you should be good to go. Run the test and checkout `FlashWatir` testing the flash.
 
-If you are not able to host the application, there is one already hosted in the internet. You can use the url [http://www.geocities.com/paulocaroli/flash/colors.html]. But this only holds the simple application. The test which uses flash inside nested frames will not be able to run.
+If you are not able to host the application, there is one already hosted in the internet. You can use the url [http://www.geocities.com/paulocaroli/flash/colors.html]. Please use something like firebug to find out the flash element hierarchy and update the script according to that.
 
 If you face any problems in running the tests or in testing flash application using `FlashWatir`, please let me know.
