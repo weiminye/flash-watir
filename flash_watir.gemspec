@@ -19,5 +19,6 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://code.google.com/p/flash-watir/}
   s.require_paths = ["lib","."]
   s.summary = %q{n extension for watir to test flash applications in firefox.}
+  s.add_dependency(%q<watir>, [">= 1.6.2"])
 end
  
