@@ -1,5 +1,6 @@
 module FireWatir
   class Flash
+    TAG = "OBJECT"
     def initialize(container,how,what)
       @container = container
       @how = how
@@ -7,8 +8,17 @@ module FireWatir
     end
     
     # standard flash methods and properties
+    
+    #Used for assert_flash_exist. So this method will have duplication
     def percent_loaded()
-      return process_request("PercentLoaded")
+      @container.assert_exist unless @container.is_a? FireWatir::Firefox
+      code_to_execute = ScriptUtils.jsForFunction(@what,"PercentLoaded")
+      begin
+        @container.js_eval(code_to_execute)
+      rescue TypeError => ex
+        raise Watir::Exception::UnknownObjectException.new(
+                                       Watir::Exception.message_for_unable_to_locate(@how, @what))
+      end
     end
     
     def is_playing?
@@ -62,7 +72,7 @@ module FireWatir
       return process_request("Zoom", percent)
     end
     
-    # Custom methods in flash exposed through ExternalInterface
+    # For executing custom methods in flash exposed through ExternalInterface
     def method_missing(method,*args)
       return process_request(method,*args)
     end
@@ -70,11 +80,30 @@ module FireWatir
     def process_request(method,*args)
        code_to_execute = ScriptUtils.jsForFunction(@what,method.to_s,*args)
        return execute(code_to_execute)      
-    end
+     end
     
     def execute(code)
       @container.assert_exist unless @container.is_a? FireWatir::Firefox #Hack -- Else it fails on the javascript execution. Need to investigate
-      return @container.js_eval(code)
-    end     
+      assert_flash_exist
+      begin
+        return_value = @container.js_eval(code)
+      rescue TypeError => ex
+        raise NoMethodError.new("Unable to execute the method on flash #{code}")
+      end
+    end
+    
+    def assert_flash_exist
+      self.percent_loaded
+    end
+    
+    #Check if flash element exists.
+    def exist?
+      begin
+        assert_flash_exist
+      rescue
+        return false
+      end
+      return true
+    end
   end
 end
