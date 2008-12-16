@@ -14,7 +14,7 @@
   * To install firewatir: [http://wtr.rubyforge.org/]
 
     From command line:
-    > gem install firewatir.
+    > gem install watir.
 
   * To Install flashwatir:
 
